@@ -2,7 +2,6 @@ package Models
 
 import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
-	"time"
 )
 
 type Order struct {
@@ -12,5 +11,5 @@ type Order struct {
 	Address string `json:"address,omitempty" bson:"address,omitempty"`
 	User string `json:"user,omitempty" bson:"user,omitempty"`
 	Products []Product `json:"products,omitempty" bson:"products,omitempty"`
-	DeliveryDate time.Time `json:"deliveryDate,omitempty" bson:"deliveryDate,omitempty"`
+	DeliveryDate string `json:"deliveryDate,omitempty" bson:"deliveryDate,omitempty"`
 }
