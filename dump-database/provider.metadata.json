@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"Merqueo.provider"}],"uuid":"168d0631398641cc8d87caab7b52accd"}
