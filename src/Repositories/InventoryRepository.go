@@ -15,7 +15,6 @@ type InventoryRepository struct {
 }
 
 func (this *InventoryRepository) GetInventory() ([]Models.Inventory, error) {
-	this.getClient(this.Server)
 	return this.GetInventoryOfProduct(0)
 }
 
