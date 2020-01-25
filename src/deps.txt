@@ -1,0 +1,5 @@
+github.com/ahmetb/go-linq/v3
+github.com/gorilla/mux
+go.mongodb.org/mongo-driver/mongo
+github.com/golang/mock/mockgen
+github.com/stretchr/testify
