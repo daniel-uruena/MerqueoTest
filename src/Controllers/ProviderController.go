@@ -10,7 +10,7 @@ import (
 
 type ProviderController struct {
 	BaseController
-	ProviderRepository Repositories.ProviderRepository
+	ProviderRepository Repositories.IProviderRepository
 }
 
 func (this *ProviderController) GetProviders(response http.ResponseWriter, request *http.Request) {

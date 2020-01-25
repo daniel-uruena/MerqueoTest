@@ -14,12 +14,12 @@ type OrderRepository struct {
 	Collection string
 }
 
-func (this *OrderRepository) GetOrders() ([]Models.Order, error) {
+func (this OrderRepository) GetOrders() ([]Models.Order, error) {
 	this.getClient(this.Server)
 	return this.GetOrdersByProduct(0)
 }
 
-func (this *OrderRepository) GetOrderById(idOrder int) (Models.Order, error) {
+func (this OrderRepository) GetOrderById(idOrder int) (Models.Order, error) {
 	this.getClient(this.Server)
 	collection := this.client.Database(this.Database).Collection(this.Collection)
 	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
@@ -31,7 +31,7 @@ func (this *OrderRepository) GetOrderById(idOrder int) (Models.Order, error) {
 	return order, nil
 }
 
-func (this *OrderRepository) GetOrdersByProduct(idProduct int) ([]Models.Order, error) {
+func (this OrderRepository) GetOrdersByProduct(idProduct int) ([]Models.Order, error) {
 	this.getClient(this.Server)
 	collection := this.client.Database(this.Database).Collection(this.Collection)
 	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
@@ -52,7 +52,7 @@ func (this *OrderRepository) GetOrdersByProduct(idProduct int) ([]Models.Order, 
 	return orders, nil
 }
 
-func (this *OrderRepository) GetOrderByDate(date string) ([]Models.Order, error) {
+func (this OrderRepository) GetOrderByDate(date string) ([]Models.Order, error) {
 	this.getClient(this.Server)
 	collection := this.client.Database(this.Database).Collection(this.Collection)
 	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)

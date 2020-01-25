@@ -14,11 +14,11 @@ type ProviderRepository struct {
 	Collection string
 }
 
-func (this *ProviderRepository) GetProviders() ([]Models.Provider, error) {
+func (this ProviderRepository) GetProviders() ([]Models.Provider, error) {
 	return this.GetProvidersByProduct(0)
 }
 
-func (this *ProviderRepository) GetProviderById(idProvider int) (Models.Provider, error) {
+func (this ProviderRepository) GetProviderById(idProvider int) (Models.Provider, error) {
 	this.getClient(this.Server)
 	collection := this.client.Database(this.Database).Collection(this.Collection)
 	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
@@ -30,7 +30,7 @@ func (this *ProviderRepository) GetProviderById(idProvider int) (Models.Provider
 	return provider, nil
 }
 
-func (this *ProviderRepository) GetProvidersByProduct(idProduct int) ([]Models.Provider, error) {
+func (this ProviderRepository) GetProvidersByProduct(idProduct int) ([]Models.Provider, error) {
 	this.getClient(this.Server)
 	collection := this.client.Database(this.Database).Collection(this.Collection)
 	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
