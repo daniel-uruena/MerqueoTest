@@ -452,3 +452,19 @@ En todo caso los errores serán mostrados con la siguiente estructura:
     "message": "Mensaje de error"
 }
 ```
+
+### Estructura de la aplicación
+Implementé el diseño basado en MVC donde mi capa de "vista" son los end points del API:
+
+- **context.go:**
+Encapsula los datos del contexto de ejecución de la aplicación, sirve como punto de control de inyección de dependencias.
+- **routes.go:**
+Genera las rutas sobre las que expone los end points del API representa en este caso la "vista" que se expone al usuario.
+- **Controllers:**
+Capa que encapsula la lógica de negocio de la aplicación usando llamados a la capa de "Repositorio".
+- **Repositories:**
+Capa que encapsula la comunicación con la base de datos diseñada bajo el patrón de fábrica de métodos para que la interfaz de cada modelo pueda ser implementada por estructuras que se comuniquen con distintas bases de datos.
+- **Models:**
+Capa que contiene las estructuras representativas de las entidades internas y de negocio.
+- **tests:**
+Contiene las pruebas unitarias y de integración del proyecto
