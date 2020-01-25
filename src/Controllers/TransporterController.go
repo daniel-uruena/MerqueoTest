@@ -9,7 +9,7 @@ import (
 
 type TransporterController struct {
 	BaseController
-	OrderRepository Repositories.OrderRepository
+	OrderRepository Repositories.IOrderRepository
 }
 
 func (this *TransporterController) OrdersByTransporter(response http.ResponseWriter, request *http.Request) {

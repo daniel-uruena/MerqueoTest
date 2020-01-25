@@ -10,7 +10,7 @@ import (
 
 type InventoryController struct {
 	BaseController
-	InventoryRepository Repositories.InventoryRepository
+	InventoryRepository Repositories.IInventoryRepository
 }
 
 func (this *InventoryController) GetInventory(response http.ResponseWriter, request *http.Request) {

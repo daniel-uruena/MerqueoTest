@@ -10,7 +10,7 @@ import (
 
 type OrderController struct {
 	BaseController
-	OrderRepository Repositories.OrderRepository
+	OrderRepository Repositories.IOrderRepository
 }
 
 func (this *OrderController) GetOrders(response http.ResponseWriter, request *http.Request) {

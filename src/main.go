@@ -23,7 +23,7 @@ func main() {
 }
 
 func loadConfiguration() (Models.Configuration, error) {
-	file, _ := os.Open("./src/appSettings.json")
+	file, _ := os.Open("appSettings.json")
 	defer file.Close()
 	configuration := Models.Configuration{}
 	err := json.NewDecoder(file).Decode(&configuration)

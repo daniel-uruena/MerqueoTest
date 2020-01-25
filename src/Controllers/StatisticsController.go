@@ -12,7 +12,7 @@ import (
 
 type StatisticsController struct {
 	BaseController
-	OrderRepository Repositories.OrderRepository
+	OrderRepository Repositories.IOrderRepository
 }
 
 func (this *StatisticsController) GetBestSoldByDate(response http.ResponseWriter, request *http.Request) {

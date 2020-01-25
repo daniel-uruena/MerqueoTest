@@ -14,11 +14,11 @@ type InventoryRepository struct {
 	Collection string
 }
 
-func (this *InventoryRepository) GetInventory() ([]Models.Inventory, error) {
+func (this InventoryRepository) GetInventory() ([]Models.Inventory, error) {
 	return this.GetInventoryOfProduct(0)
 }
 
-func (this *InventoryRepository) GetInventoryOfProduct(idProduct int) ([]Models.Inventory, error) {
+func (this InventoryRepository) GetInventoryOfProduct(idProduct int) ([]Models.Inventory, error) {
 	this.getClient(this.Server)
 	collection := this.client.Database(this.Database).Collection(this.Collection)
 	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
@@ -39,7 +39,7 @@ func (this *InventoryRepository) GetInventoryOfProduct(idProduct int) ([]Models.
 	return inventory, nil
 }
 
-func (this *InventoryRepository) GetInventoryByDate(date string) ([]Models.Inventory, error) {
+func (this InventoryRepository) GetInventoryByDate(date string) ([]Models.Inventory, error) {
 	this.getClient(this.Server)
 	collection := this.client.Database(this.Database).Collection(this.Collection)
 	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
@@ -60,7 +60,7 @@ func (this *InventoryRepository) GetInventoryByDate(date string) ([]Models.Inven
 	return inventory, nil
 }
 
-func (this *InventoryRepository) GetInventoryOfProductAndDate(idProduct int, deliveryDate string) (Models.Inventory, error) {
+func (this InventoryRepository) GetInventoryOfProductAndDate(idProduct int, deliveryDate string) (Models.Inventory, error) {
 	this.getClient(this.Server)
 	collection := this.client.Database(this.Database).Collection(this.Collection)
 	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)

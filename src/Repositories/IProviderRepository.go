@@ -7,5 +7,5 @@ import (
 type IProviderRepository interface {
 	GetProviders() ([]Models.Provider, error)
 	GetProviderById(idProvider int) (Models.Provider, error)
-	GetProviderByProduct(idProduct int) ([]Models.Provider, error)
+	GetProvidersByProduct(idProduct int) ([]Models.Provider, error)
 }

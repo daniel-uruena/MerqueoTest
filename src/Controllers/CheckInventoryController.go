@@ -13,9 +13,9 @@ import (
 
 type CheckInventoryController struct {
 	BaseController
-	InventoryRepository Repositories.InventoryRepository
-	OrderRepository     Repositories.OrderRepository
-	ProviderRepository  Repositories.ProviderRepository
+	InventoryRepository Repositories.IInventoryRepository
+	OrderRepository     Repositories.IOrderRepository
+	ProviderRepository  Repositories.IProviderRepository
 }
 
 func (this *CheckInventoryController) CheckInventoryToOrder(response http.ResponseWriter, request *http.Request) {
